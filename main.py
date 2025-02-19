@@ -1,8 +1,6 @@
 import data
 from helpers import is_url_reachable
 
-print(data.hello())  # Confirming data.py is working
-
 
 class TestUrbanRoutes:
     @classmethod
