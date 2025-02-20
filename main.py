@@ -5,14 +5,10 @@ from helpers import is_url_reachable
 class TestUrbanRoutes:
     @classmethod
     def setup_class(cls):
-        # Add in S8
-        URBAN_ROUTES_URL = data.URBAN_ROUTES_URL
-
-        if is_url_reachable(URBAN_ROUTES_URL):
-           print("Connected to the Urban Routes server")
+        if helpers.is_url_reachable(data.URBAN_ROUTES_URL):
+                print("Connected to the Urban Routes server")
         else:
-           print("Cannot connect to Urban Routes server")
-           pass
+                print("Cannot connect to Urban Routes. Check the server is on and still running")
 
     def test_set_route(self):
         # Add in S8
@@ -45,8 +41,9 @@ class TestUrbanRoutes:
         pass
 
     def test_order_2_ice_creams(self):
-        # Add in S8 # I commited again because i recall having this saved
-        for i in range(2):
+        # Add in S8
+        number_of_ice_cream = 2
+        for i in range(number_of_ice_cream):
          print("Function created for order 2 ice creams")
         pass
 
@@ -66,4 +63,3 @@ if __name__ == "__main__":
     test.test_comment_for_driver()
     test.test_order_blanket_and_handkerchiefs()
     test.test_order_2_ice_creams()
-    test.test_car_search_model_appears()
